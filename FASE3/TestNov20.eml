@@ -1,0 +1,140 @@
+Delivered-To: test.pc.fcfm@gmail.com
+Received: by 2002:ac2:5e8f:0:0:0:0:0 with SMTP id b15csp2129822lfq;
+        Sat, 21 Nov 2020 09:19:47 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJzMmb+o7+CR3mxapMm4XPo5nkUyeEtJucLtzFnbyrwAfSnLQ/mxQMpu2sWyQbglK6FPrBpX
+X-Received: by 2002:a05:6214:909:: with SMTP id dj9mr3391257qvb.31.1605979187688;
+        Sat, 21 Nov 2020 09:19:47 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1605979187; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=icxz2VudjlxwbXMngJ1qfUyOrE8XEx7iboWQPV+LtplJyyBjP8Ql5B14UKBaTPQB66
+         cU4or0YL3QMLSoNcXJiBPkmggJ3EzXiTLQGl+19/LCuFI0i75YCoLqZmc7tj/tOJa4c+
+         brIV1XPdkjkhJvzdNZdys62wAbHKCAsFBn/mz/ps+O7v3X0Ia9fI18NhWr0VmCK/UkDL
+         UIXN5a7trYk7wQir5q3S2rV/HC+6C5PKDPT7G1hPRn2GcXY/rr30Wl/B+UEqz3mjN+v3
+         jpiPc9gwofRx2IGhd9LEsynupt7n3rkGr7P/5gRu9Y8Xsp+9zO7SavdhuahEBhx+oFAk
+         GBmA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-transfer-encoding:content-language
+         :accept-language:in-reply-to:references:message-id:date:thread-index
+         :thread-topic:subject:to:from:dkim-signature;
+        bh=pX5RkfK/JaKtcFT6XIoKZwFdc1O2C3bkgbDcabD7qlk=;
+        b=fO/qIBpK8sQ9c4vSyQ6W8R2fyIMC8zv5jqAI3g1FuxWOpPYUxTfRDBDwY12yUVEjyz
+         8MwyphqQIPYPqAljOu09C+mF3cB493EXvAwod5S0QA4yaMl9QMPr69oAPG/Dvcis8nNy
+         zPVGpLvdf5PKgPMgAINvquPPwFthAfJwUCuA4kcIBWRNBGcOxMOuwjsk37ZFQR5hd/VD
+         AHNWBL/YhIep7gdlQoz6a533EtTCSv0u4dR0kw75vvwoRmz/fQOS6QEnjF+J8vvzBG86
+         tckiDqLQnNfyaAYgrOQwXS5j0oMPrqrL0N2A9WexRONsJR0nTkS3GncO8I3ZDPdBfzrn
+         unPQ==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@uanledu.onmicrosoft.com header.s=selector2-uanledu-onmicrosoft-com header.b=PYrPjyX7;
+       arc=pass (i=1 spf=pass spfdomain=uanl.edu.mx dkim=pass dkdomain=uanl.edu.mx dmarc=pass fromdomain=uanl.edu.mx);
+       spf=pass (google.com: domain of perla.vieragn@uanl.edu.mx designates 40.107.75.122 as permitted sender) smtp.mailfrom=perla.vieragn@uanl.edu.mx
+Return-Path: <perla.vieragn@uanl.edu.mx>
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (mail-eopbgr750122.outbound.protection.outlook.com. [40.107.75.122])
+        by mx.google.com with ESMTPS id d20si3596486qkc.69.2020.11.21.09.19.47
+        for <test.pc.fcfm@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Nov 2020 09:19:47 -0800 (PST)
+Received-SPF: pass (google.com: domain of perla.vieragn@uanl.edu.mx designates 40.107.75.122 as permitted sender) client-ip=40.107.75.122;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@uanledu.onmicrosoft.com header.s=selector2-uanledu-onmicrosoft-com header.b=PYrPjyX7;
+       arc=pass (i=1 spf=pass spfdomain=uanl.edu.mx dkim=pass dkdomain=uanl.edu.mx dmarc=pass fromdomain=uanl.edu.mx);
+       spf=pass (google.com: domain of perla.vieragn@uanl.edu.mx designates 40.107.75.122 as permitted sender) smtp.mailfrom=perla.vieragn@uanl.edu.mx
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Eg/LNVtnv/AQ+EGC2gpMyKYJzAr6Hpcf+dw2a5sqdkdLpecdgVfjjc1IxE7FO/YL/H/OZiPOg5BFClbs/aWv24IPn2XlCQpDjvui8oX0a2j54ZsOSwL6bukFRVESaa1JFkKFvNaPvh+mJ8YOFvOuWcwBk36XAHUcYszn1v6cwziyWM5SdBBKIGUSuOZVjA5Xo5EhgAIztEe6zvlubWgFvOt4sy+D6oLCOdZR29Mg9+hpRvhS+iSElO3tv4LRmrH6KtU6EJEk3OGqNF9iPMjdgVey8U2ExQ83xWbyJ95J07Xj0AGYhLKG51DWoBHpFYCytaaO/sTFc9CX5RiW9nnZPg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pX5RkfK/JaKtcFT6XIoKZwFdc1O2C3bkgbDcabD7qlk=;
+ b=OOpHJVzLEK1rQWAJs9dQYV+9ENbcWzmlnH/smkq9sea5GhXQkSBvkopw3xqM3toNDnf4dOhBnB/0aNVBhpQVCBdhg6ceDxH7LHFNSAihrjGBKPP9gwnPtaIMevh7yYMElqqHd82qGVso9n/1xfr7+IApPoviLx33Ms9J5u0cRIMNtclzV2w3V2XFp/k+BnIsvTr6P2X6Pfix7Orl5mKQ8TWa+5PCXSztcQsmkIW2PKq+jhBoNxMz0CpNeqlRJ1ilYW/QThmD4MldBpHuLxnRqXdqDF0n5WZs/mk2Cxz9smIfHh61ME2HcFTU65sYLBZw+aT28htofEj5T8e307SXAQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=uanl.edu.mx; dmarc=pass action=none header.from=uanl.edu.mx;
+ dkim=pass header.d=uanl.edu.mx; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=uanledu.onmicrosoft.com; s=selector2-uanledu-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=pX5RkfK/JaKtcFT6XIoKZwFdc1O2C3bkgbDcabD7qlk=;
+ b=PYrPjyX7nJFSGn+2Q2hNE4LuQ7nNtWDBKTXFujnVp5/Nq7GCjk3i5leR2z/8Jp/0/pkVgmG57KeXm0NxIWPmL812eK1sf+lB4IqDAeWkVwcArlvahbIeTpgo85X302xQlWKk63CbgmIpRnG4zIectp4FrTSVNkpOErqFIfcLOGk=
+Received: from BYAPR05MB5703.namprd05.prod.outlook.com (2603:10b6:a03:c4::15)
+ by BYAPR05MB6389.namprd05.prod.outlook.com (2603:10b6:a03:e4::28) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3611.9; Sat, 21 Nov
+ 2020 17:19:45 +0000
+Received: from BYAPR05MB5703.namprd05.prod.outlook.com
+ ([fe80::98c9:9b09:14b2:7d39]) by BYAPR05MB5703.namprd05.prod.outlook.com
+ ([fe80::98c9:9b09:14b2:7d39%7]) with mapi id 15.20.3589.025; Sat, 21 Nov 2020
+ 17:19:45 +0000
+From: PERLA MARLENE VIERA GONZALEZ <perla.vieragn@uanl.edu.mx>
+To: "test.pc.fcfm@gmail.com" <test.pc.fcfm@gmail.com>
+Subject: RE: Important
+Thread-Topic: Important
+Thread-Index: AQHWv63CwWFMkBgvYUah6/B+aVLRgKnS1Z3w
+Date: Sat, 21 Nov 2020 17:19:45 +0000
+Message-ID:
+ <BYAPR05MB5703ED602A84799FFBD6EC94A9FE0@BYAPR05MB5703.namprd05.prod.outlook.com>
+References: <5fb87ae4.1c69fb81.1c960.9864@mx.google.com>
+In-Reply-To: <5fb87ae4.1c69fb81.1c960.9864@mx.google.com>
+Accept-Language: es-MX, en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+authentication-results: gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=none action=none header.from=uanl.edu.mx;
+x-originating-ip: [2806:2f0:4060:f9cf:41b:dcaa:1d04:12c0]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 816d0edf-a57a-4f52-4eb6-08d88e41a473
+x-ms-traffictypediagnostic: BYAPR05MB6389:
+x-microsoft-antispam-prvs:
+ <BYAPR05MB6389ED3C5BBF652F3FB6C5EEA9FE0@BYAPR05MB6389.namprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2887;
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ Fa0Q1bv3MbSvyFtX8R1ZO/uHtx9O3v5Ad7jVAD4DnsLRqYirBsmT/3kbkExOvAcC8TcIwJbYQBvc1Dqf0hopO5w66gHpSpTU31uvsOXzLs59P2JJkAenm7z9kvz+3RnusA/Sx4iZ/3iaCQpAWeUilH+ZRDt5WbvNeNWGo194OmP1GuE3KESJUHH2lLZZetRH61rHOa98+NQVGSMzgTu0z5+0j9TEUNYAG9I3mLyjKHfeYFuqUYDfDV299oSqu8eHtnqNfskUPBwSc+B/j5Dywskjotc6zz0mcOsG5hceOmYk2LjIs5o3Z2eFDk/NEO/fGaySJyDGohVbFILAHVDk2g==
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BYAPR05MB5703.namprd05.prod.outlook.com;PTR:;CAT:NONE;SFS:(39850400004)(376002)(396003)(366004)(136003)(346002)(8936002)(786003)(6916009)(7696005)(2906002)(33656002)(45080400002)(478600001)(316002)(66446008)(64756008)(86362001)(66476007)(3480700007)(66556008)(186003)(53546011)(6506007)(76116006)(66946007)(7116003)(9686003)(55016002)(83380400001)(8676002)(4744005)(5660300002)(71200400001)(52536014);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata:
+	=?us-ascii?Q?ZR6qMCUJ+wRjBDz3cTk4MjqInFh4yYsHirWQ+djNex1YCvAl5BKAHrvlXcDo?=
+ =?us-ascii?Q?iPnD4ucqalQOovKCtCkkyzJovOK2wWHsfokAonGqfpT6pIgA39k7k0aDKeZW?=
+ =?us-ascii?Q?pbhkooLdyH/1yPy+WALwmjD8KhYo1raw3vT9IXbAY0He6Sz9Oja2zqZeib/b?=
+ =?us-ascii?Q?1FEltIu9iVrP/YlqBSy6xZkHgZQ9+yffpbt7vqTcOEFwMQO6RKZOJtqYbikQ?=
+ =?us-ascii?Q?keDXB18GaDCuKBE/Dx5j5E8SxRf0T9r9dyBdZXuLSSA9hJeIdr2ADc2xkDWl?=
+ =?us-ascii?Q?vtT6PmEZGrz6PA8B7+4swtmsOPZN6e5mbLqs93EI9GRVzbwX2sdGTaSQ3MJL?=
+ =?us-ascii?Q?FCM379yHWaZV/WqGzpvhbZaV1suheT9J8LmDK9QGtdKGAsAaFfMYdZLu5wPN?=
+ =?us-ascii?Q?Zc8/PluouWvmKif5ETp1nA0tb7wzO6QVKGizGGvb3EA8n+f+ng5ZXsBBwlkC?=
+ =?us-ascii?Q?S7xinf8Iy0UqOKJNLsUFIT3Nez73C7EW3l+mYegIZxVG2o34paKc8uxbh6LC?=
+ =?us-ascii?Q?sCQqi628z5zdKSyRCOmXUxZlsty7yxQP2klPvPBxmidVg+UKA0bI4C70JL9A?=
+ =?us-ascii?Q?BtSQ1OhW6G9xH4MNXGRO0kC0GxRGai9qss4KhjbMuXhB7tSNJYeQMr10LYQI?=
+ =?us-ascii?Q?FfOjmVkis4bu9vJ+MnTSPc+O7upMCTrbSJEyNsxHt0YcBvhxGlXswIn/u6gF?=
+ =?us-ascii?Q?xFsH1R8OsOHwLxREHj+fsR45KipqJPX7K5ytHTV9GYOE95dDoie2ev2ezd3Z?=
+ =?us-ascii?Q?jJHNH26+Y+VN+O0bOXdPhvf36l8EUKtQmQa0IZB3/o7Rw8DX34cvctvdeejj?=
+ =?us-ascii?Q?ZoCnb5aUt6p1ns0nGP+FiIVlLHkjH9hOXnB8sFqD6RKsVfhjW3Ra1yOhYOE3?=
+ =?us-ascii?Q?bACZzuMXPWlFWAwsaXBKUoNhS4SNTGDdP2JjCZaqtZgPhHbrlYTWuiHRO+KD?=
+ =?us-ascii?Q?Lz6ykN/p7xMYVC1NYK25/w=3D=3D?=
+x-ms-exchange-transport-forked: True
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+X-OriginatorOrg: uanl.edu.mx
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BYAPR05MB5703.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 816d0edf-a57a-4f52-4eb6-08d88e41a473
+X-MS-Exchange-CrossTenant-originalarrivaltime: 21 Nov 2020 17:19:45.1726
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: caca9011-7b6a-44de-861f-095a2ca883b7
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: uKf4UA458wstOuTctmZ4bzGWuPLwoLtWDSfZbRX7LMgtULO4/0xRTF628jtgAIQQh2r2fU8ldtJY+5fsw6KEWQTmegXIlGDULb7MCgrFISY=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR05MB6389
+
+Thanks
+
+-----Original Message-----
+From: test.pc.fcfm@gmail.com <test.pc.fcfm@gmail.com>=20
+Sent: Friday, November 20, 2020 8:27 PM
+To: PERLA MARLENE VIERA GONZALEZ <perla.vieragn@uanl.edu.mx>
+Subject: Re: Important
+
+Subject: Order confirmation
+                To: perla.vieragn@uanl.edu.mx
+                From: billgates@outlook.com
+                Hi Name, thanks for your order!
+                We are processing it now and will contact you soon

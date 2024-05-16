@@ -1,0 +1,18 @@
+import pyautogui, subprocess, time
+msg = input("Qué quieres escribir? ")
+subprocess.call(["cmd", "/c", "start", "/max", 'C:\\Windows\\System32\\notepad.exe'])
+time.sleep(5)
+pyautogui.click(100,100)
+pyautogui.typewrite(msg)
+pyautogui.press('enter')
+pyautogui.press('tab')
+pyautogui.typewrite('Bye!')
+pyautogui.keyDown('ctrl')
+pyautogui.keyDown('s')
+pyautogui.keyUp('s')
+pyautogui.keyUp('ctrl')
+pyautogui.click(100,100)
+pyautogui.typewrite('test.txt')
+pyautogui.press('tab')
+pyautogui.press('enter')
+
